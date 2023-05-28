@@ -1,0 +1,40 @@
+.row-2 {
+  max-width: 1140px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 535px 535px;
+  column-gap: 70px;
+  @include respond(tab-port) {
+    grid-template-columns: 1fr;
+    padding: 15px 25px;
+  }
+}
+
+.row-4 {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  translate: -50% -50%;
+  display: grid;
+  grid-template-columns: 220px 220px 220px 220px;
+  column-gap: 50px;
+  @include respond(tab-port) {
+    grid-template-columns: 1fr;
+    width: 90%;
+    margin: 0 auto;
+    position: static;
+    translate: none;
+  }
+}
+
+.row-3 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 70px;
+  padding: 0 100px 0 100px;
+  @include respond(tab-port) {
+    grid-template-columns: 1fr;
+    width: 100%;
+    padding: 0 30px;
+  }
+}

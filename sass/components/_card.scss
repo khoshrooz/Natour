@@ -1,0 +1,185 @@
+.card {
+  perspective: 1500px;
+  position: relative;
+  &__side {
+    box-shadow: 0 10px 30px rgba($color: $color-black, $alpha: 0.2);
+    border-radius: 3px;
+    height: 360px;
+    width: 100%;
+    top: 0;
+    left: 0;
+    backface-visibility: hidden;
+    transition: all ease 0.6s;
+    &--front {
+      background-color: $color-white;
+    }
+    &--back {
+      transform: rotateY(180deg);
+      position: absolute;
+      &-1 {
+        background-image: linear-gradient(
+          to right bottom,
+          $color-secondary-light,
+          $color-secondary-dark
+        );
+      }
+      &-2 {
+        background-image: linear-gradient(
+          to right bottom,
+          $color-primary-light,
+          $color-primary-dark
+        );
+      }
+      &-3 {
+        background-image: linear-gradient(
+          to right bottom,
+          $color-tertiary-light,
+          $color-tertiary-dark
+        );
+      }
+    }
+  }
+  &:hover &__side--front {
+    transform: rotateY(-180deg);
+  }
+  &:hover &__side--back {
+    transform: rotateY(0);
+  }
+  &__picture {
+    background-size: cover;
+    height: 170px;
+    background-blend-mode: screen;
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+    &--1 {
+      background-image: linear-gradient(
+          to right bottom,
+          $color-secondary-light,
+          $color-secondary-dark
+        ),
+        url(./../../img/nat-5.jpg);
+    }
+    &--2 {
+      background-image: linear-gradient(
+          to right bottom,
+          $color-primary-light,
+          $color-primary-dark
+        ),
+        url(./../../img/nat-6.jpg);
+    }
+    &--3 {
+      background-image: linear-gradient(
+          to right bottom,
+          $color-tertiary-light,
+          $color-tertiary-dark
+        ),
+        url(./../../img/nat-7.jpg);
+    }
+  }
+  &__heading {
+    font-size: 17px;
+    font-weight: 300;
+    text-align: right;
+    color: $color-white;
+    text-transform: uppercase;
+    position: absolute;
+    top: 32%;
+    right: 8%;
+    width: 50%;
+  }
+  &__heading-span {
+    padding: 4px 10px;
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
+    &--1 {
+      background-image: linear-gradient(
+        to right bottom,
+        $color-secondary-light,
+        $color-secondary-dark
+      );
+    }
+    &--2 {
+      background-image: linear-gradient(
+        to right bottom,
+        $color-primary-light,
+        $color-primary-dark
+      );
+    }
+    &--3 {
+      background-image: linear-gradient(
+        to right bottom,
+        $color-tertiary-light,
+        $color-tertiary-dark
+      );
+    }
+  }
+  &__details {
+    ul {
+      list-style: none;
+      text-align: center;
+      margin: 0 auto;
+      width: 75%;
+    }
+    li {
+      padding: 10px;
+      font-size: 13px;
+      &:not(:last-child) {
+        border-bottom: 1px solid #eee;
+      }
+    }
+  }
+  &__cta {
+    width: 75%;
+    text-align: center;
+    margin: 85px auto;
+  }
+  &__price--box {
+    color: $color-white;
+    text-align: center;
+  }
+  &__price--only {
+    font-size: 20px;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+  }
+  &__price--value {
+    font-size: 60px;
+    font-weight: 100;
+    margin-bottom: 30px;
+  }
+}
+
+@include respond(tab-port) {
+  .card {
+    height: auto;
+    box-shadow: 0 10px 30px rgba($color: $color-black, $alpha: 0.2);
+    border-radius: 3px;
+    &__side {
+      height: auto;
+      position: relative;
+      box-shadow: none;
+    }
+    &__side--back {
+      transform: rotateY(0);
+      clip-path: polygon(0 20%, 100% 0, 100% 100%, 0 100%);
+    }
+    &:hover &__side--front {
+      transform: rotateY(0);
+    }
+    &__cta {
+      width: 100%;
+      margin: 20px auto;
+      padding: 30px;
+    }
+    &__price--only {
+      font-size: 20px;
+      margin-bottom: 10px;
+      padding-top: 10px;
+    }
+    &__price--value {
+      font-size: 40px;
+      font-weight: 100;
+      margin-bottom: 1px;
+    }
+  }
+}

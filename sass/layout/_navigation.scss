@@ -1,0 +1,148 @@
+.navigation {
+  &__checkbox {
+    display: none;
+  }
+  &__button {
+    height: 68px;
+    width: 68px;
+    border-radius: 50%;
+    background-color: $color-white;
+    box-shadow: 0 20px 40px rgba($color: $color-black, $alpha: 0.5);
+    position: fixed;
+    cursor: pointer;
+    display: inline-block;
+    top: 59px;
+    right: 55px;
+    z-index: 2000;
+    @include respond(tab-port) {
+      height: 48px;
+      width: 48px;
+      top: 18px;
+      right: 30px;
+    }
+  }
+  &__background {
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    background-image: radial-gradient(
+      $color-primary-light,
+      $color-primary-dark
+    );
+    position: fixed;
+    // transform: scale(48);
+    top: 60px;
+    right: 60px;
+    z-index: 1000;
+    transition: all ease-in 0.7s;
+    @include respond(tab-port) {
+      height: 48px;
+      width: 48px;
+      top: 18px;
+      right: 30px;
+    }
+  }
+  &__nav {
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    opacity: 0;
+    width: 0;
+    z-index: 1500;
+    transition: all (cubic-bezier(0.98, -0.01, 0, 1.62)) 0.9s;
+  }
+  &__list {
+    list-style: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-size: 20px;
+    text-transform: uppercase;
+  }
+  &__item {
+    margin-top: 15px;
+    span {
+      margin-right: 10px;
+    }
+  }
+  &__link {
+    &:link,
+    &:visited {
+      display: inline-block;
+      text-decoration: none;
+      color: $color-white;
+      font-weight: 300;
+      background-image: linear-gradient(
+        120deg,
+        transparent 50%,
+        $color-white 50%
+      );
+      padding: 5px 8px;
+      background-size: 220%;
+      transition: all, 0.6s;
+    }
+    &:hover,
+    &:active {
+      background-position: 100%;
+      color: $color-primary;
+      transform: translatex(7px);
+    }
+  }
+  &__checkbox:checked ~ &__background {
+    transform: scale(48);
+  }
+  &__checkbox:checked ~ &__nav {
+    width: 100%;
+    opacity: 1;
+  }
+  &__icon {
+    display: inline-block;
+    position: relative;
+    &,
+    &::after,
+    &::before {
+      width: 30px;
+      height: 2.5px;
+      background-color: $color-gray-dark;
+      top: 19px;
+      left: 19px;
+      @include respond(tab-port) {
+        width: 25px;
+        top: 10px;
+        left: 12px;
+      }
+    }
+    &::after,
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      transition: all ease-in 0.5s;
+    }
+    &::after {
+      top: 10px;
+    }
+    &::before {
+      top: -10px;
+    }
+    &__button:hover &__icon::after {
+      top: -3px;
+    }
+    &__button:hover &__icon::before {
+      top: 3px;
+    }
+  }
+  &__checkbox:checked ~ &__button &__icon {
+    background-color: transparent;
+  }
+  &__checkbox:checked ~ &__button &__icon::after {
+    transform: rotate(-135deg);
+    top: 0;
+  }
+  &__checkbox:checked ~ &__button &__icon::before {
+    transform: rotate(135deg);
+    top: 0;
+  }
+}
