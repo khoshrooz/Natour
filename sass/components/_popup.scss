@@ -108,8 +108,9 @@
   }
   &__img {
     display: block;
-    height: auto;
+    height: 50%;
     width: 100%;
+    object-fit: cover;
   }
   &:target {
     opacity: 1;
