@@ -926,7 +926,7 @@ body {
   @media (max-width: 600px) {
     .navigation__list {
       width: 70%;
-      font-size: 11px; } }
+      font-size: 13px; } }
 
 .navigation__item {
   margin-top: 15px; }
