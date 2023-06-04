@@ -111,6 +111,12 @@
     height: 50%;
     width: 100%;
     object-fit: cover;
+    @include respond(phone) {
+      height: auto;
+    }
+    @include respond(tab-port) {
+      height: auto;
+    }
   }
   &:target {
     opacity: 1;
