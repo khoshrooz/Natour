@@ -8,9 +8,13 @@
   transition: all 0.2s ease-in;
   font-weight: 700;
   position: relative;
+  @include respond(phone) {
+    font-size: 10px;
+    padding: 12px 20px;
+  }
   @include respond(tab-port) {
     font-size: 12px;
-    padding: 12px 28px;
+    padding: 11px 18px;
   }
   &-animated {
     animation: moveInBottom 0.4s ease-in 0.5s;

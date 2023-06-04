@@ -1,6 +1,9 @@
 .form {
   &__group:not(:last-child) {
     margin-bottom: 10px;
+    @include respond(tab-land) {
+      margin-bottom: 8px;
+    }
   }
   &__input {
     font-size: 14px;
@@ -12,9 +15,13 @@
     border: none;
     border-radius: 3px;
     transition: all 0.6s;
-    @include respond(tab-port) {
+    @include respond(phone) {
       width: 100%;
       font-size: 12px;
+    }
+    @include respond(tab-port) {
+      width: 60%;
+      font-size: 13px;
     }
     &:focus {
       outline: none;
@@ -32,6 +39,9 @@
     display: block;
     font-size: 14px;
     transition: all 0.6s;
+    @include respond(phone) {
+      font-size: 12px;
+    }
     @include respond(tab-port) {
       font-size: 12px;
     }
@@ -44,8 +54,11 @@
   &__radio-group {
     width: 40%;
     display: inline-block;
-    @include respond(tab-port) {
+    @include respond(phone) {
       width: 49%;
+    }
+    @include respond(tab-port) {
+      width: 35%;
     }
   }
   &__radio-input {
@@ -55,8 +68,11 @@
     position: relative;
     cursor: pointer;
     padding-left: 25px;
-    @include respond(tab-port) {
+    @include respond(phone) {
       font-size: 11px;
+    }
+    @include respond(tab-port) {
+      font-size: 13px;
     }
   }
   &__radio-button {
@@ -68,9 +84,13 @@
     position: absolute;
     top: 0;
     left: 0;
-    @include respond(tab-port) {
+    @include respond(phone) {
       width: 16px;
       height: 16px;
+    }
+    @include respond(tab-port) {
+      width: 18px;
+      height: 18px;
     }
     &::after {
       content: "";

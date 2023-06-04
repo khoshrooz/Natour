@@ -149,7 +149,7 @@
   }
 }
 
-@include respond(tab-port) {
+@include respond(phone) {
   .card {
     height: auto;
     box-shadow: 0 10px 30px rgba($color: $color-black, $alpha: 0.2);
@@ -180,6 +180,50 @@
       font-size: 40px;
       font-weight: 100;
       margin-bottom: 1px;
+    }
+  }
+}
+
+@include respond(tab-port) {
+  .card {
+    &__side {
+      height: auto;
+      width: 100%;
+    }
+    &__picture {
+      background-size: cover;
+      height: 150px;
+    }
+    &__heading {
+      font-size: 13px;
+    }
+    &__heading-span {
+      padding: 3px 6px;
+    }
+    &__details {
+      ul {
+        margin: 10px auto;
+        width: 90%;
+      }
+      li {
+        padding: 10px;
+        font-size: 11px;
+      }
+    }
+    &__cta {
+      width: 80%;
+      text-align: center;
+      margin: 95px auto;
+    }
+    &__price--only {
+      font-size: 14px;
+      text-transform: uppercase;
+      margin-bottom: 25px;
+    }
+    &__price--value {
+      font-size: 30px;
+      font-weight: 100;
+      margin-bottom: 25px;
     }
   }
 }

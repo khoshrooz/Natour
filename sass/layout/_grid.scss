@@ -2,11 +2,21 @@
   max-width: 1140px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 535px 535px;
+  grid-template-columns: 1fr 1fr;
   column-gap: 70px;
-  @include respond(tab-port) {
+  @include respond(phone) {
     grid-template-columns: 1fr;
     padding: 15px 25px;
+  }
+  @include respond(tab-port) {
+    grid-template-columns: 50% 50%;
+    margin: 0 auto;
+    gap: 30px;
+    height: 250px;
+  }
+  @include respond(tab-land) {
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
   }
 }
 
@@ -18,12 +28,27 @@
   display: grid;
   grid-template-columns: 220px 220px 220px 220px;
   column-gap: 50px;
-  @include respond(tab-port) {
+  @include respond(phone) {
     grid-template-columns: 1fr;
     width: 90%;
     margin: 0 auto;
     position: static;
     translate: none;
+  }
+  @include respond(tab-port) {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    width: 100%;
+    position: static;
+    translate: none;
+    row-gap: 35px;
+    column-gap: 35px;
+  }
+  @include respond(tab-land) {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    column-gap: 20px;
+    width: 100%;
+    padding: 10px 20px;
   }
 }
 
@@ -32,9 +57,17 @@
   grid-template-columns: 1fr 1fr 1fr;
   column-gap: 70px;
   padding: 0 100px 0 100px;
-  @include respond(tab-port) {
+  @include respond(phone) {
     grid-template-columns: 1fr;
     width: 100%;
     padding: 0 30px;
+  }
+  @include respond(tab-port) {
+    column-gap: 25px;
+    padding: 0;
+  }
+  @include respond(tab-land) {
+    column-gap: 40px;
+    padding: 0 40px;
   }
 }

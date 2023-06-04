@@ -4,23 +4,53 @@
 
 .u-margin-bottom-big {
   margin-bottom: 80px;
-  @include respond(tab-port) {
+  @include respond(phone) {
     margin-bottom: 30px;
+  }
+  @include respond(tab-port) {
+    margin-bottom: 40px;
+  }
+  @include respond(tab-land) {
+    margin-bottom: 40px;
   }
 }
 
 .u-margin-bottom-small {
   margin-bottom: 15px;
+  @include respond(phone) {
+    margin-bottom: 10px;
+  }
+  @include respond(tab-port) {
+    margin-bottom: 12px;
+  }
+  @include respond(tab-land) {
+    margin-bottom: 13px;
+  }
 }
 
 .u-margin-bottom-medium {
   margin-bottom: 35px;
+  @include respond(phone) {
+    margin-bottom: 20px;
+  }
+  @include respond(tab-port) {
+    margin-bottom: 28px;
+  }
+  @include respond(tab-land) {
+    margin-bottom: 30px;
+  }
 }
 
 .u-margin-top-big {
   margin-top: 80px;
-  @include respond(tab-port) {
+  @include respond(phone) {
     margin-top: 5px;
+  }
+  @include respond(tab-port) {
+    margin-top: 15px;
+  }
+  @include respond(tab-land) {
+    margin-top: 30px;
   }
 }
 
@@ -29,8 +59,14 @@
 }
 
 .u-margin-top-small {
-  margin-top: 30px;
-  @include respond(tab-port) {
+  margin-top: 20px;
+  @include respond(phone) {
     margin-top: 5px;
+  }
+  @include respond(tab-port) {
+    margin-top: 10px;
+  }
+  @include respond(tab-land) {
+    margin-top: 15px;
   }
 }

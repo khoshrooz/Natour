@@ -14,11 +14,17 @@
     top: 59px;
     right: 55px;
     z-index: 2000;
-    @include respond(tab-port) {
+    @include respond(phone) {
       height: 48px;
       width: 48px;
       top: 18px;
       right: 30px;
+    }
+    @include respond(tab-port) {
+      height: 58px;
+      width: 58px;
+      top: 20px;
+      right: 35px;
     }
   }
   &__background {
@@ -30,16 +36,21 @@
       $color-primary-dark
     );
     position: fixed;
-    // transform: scale(48);
     top: 60px;
     right: 60px;
     z-index: 1000;
     transition: all ease-in 0.7s;
-    @include respond(tab-port) {
+    @include respond(phone) {
       height: 48px;
       width: 48px;
       top: 18px;
       right: 30px;
+    }
+    @include respond(tab-port) {
+      height: 58px;
+      width: 58px;
+      top: 20px;
+      right: 35px;
     }
   }
   &__nav {
@@ -60,6 +71,10 @@
     text-align: center;
     font-size: 20px;
     text-transform: uppercase;
+    @include respond(phone) {
+      width: 70%;
+      font-size: 11px;
+    }
   }
   &__item {
     margin-top: 15px;
@@ -91,7 +106,7 @@
     }
   }
   &__checkbox:checked ~ &__background {
-    transform: scale(48);
+    transform: scale(52);
   }
   &__checkbox:checked ~ &__nav {
     width: 100%;
@@ -108,10 +123,15 @@
       background-color: $color-gray-dark;
       top: 19px;
       left: 19px;
-      @include respond(tab-port) {
+      @include respond(phone) {
         width: 25px;
         top: 10px;
         left: 12px;
+      }
+      @include respond(tab-port) {
+        width: 30px;
+        top: 15px;
+        left: 14px;
       }
     }
     &::after,

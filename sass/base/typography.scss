@@ -7,8 +7,17 @@
   display: block;
   animation: moveInLeft 1s ease-in;
   @include respond(phone) {
-    letter-spacing: 20px;
-    font-size: 50px;
+    letter-spacing: 10px;
+    font-size: 30px;
+    margin-bottom: 10px;
+  }
+  @include respond(tab-port) {
+    font-size: 45px;
+    letter-spacing: 12px;
+  }
+  @include respond(tab-land) {
+    font-size: 52px;
+    letter-spacing: 17px;
   }
 }
 
@@ -21,11 +30,20 @@
   margin-bottom: 50px;
   @include respond(phone) {
     font-size: 10px;
+    letter-spacing: 5px;
+  }
+  @include respond(tab-port) {
+    font-size: 15px;
+    letter-spacing: 8px;
+  }
+  @include respond(tab-land) {
+    font-size: 17px;
+    letter-spacing: 10px;
   }
 }
 
 .heading-secondary {
-  font-size: 35px;
+  font-size: 30px;
   display: inline-block;
   text-transform: uppercase;
   font-weight: 700;
@@ -38,9 +56,18 @@
   color: transparent;
   letter-spacing: 2px;
   transition: all 0.6s;
-  @include respond(tab-port) {
+  @include respond(phone) {
     font-size: 20px;
     letter-spacing: 0;
+    padding: 0 10px;
+  }
+  @include respond(tab-port) {
+    font-size: 23px;
+    padding: 0 15px;
+  }
+  @include respond(tab-land) {
+    font-size: 25px;
+    padding: 0 12px;
   }
   &:hover {
     transform: skewY(2deg) skewX(15deg);
@@ -52,8 +79,14 @@
   font-size: 16px;
   font-weight: 700;
   text-transform: uppercase;
-  @include respond(tab-port) {
+  @include respond(phone) {
     font-size: 12px;
+  }
+  @include respond(tab-port) {
+    font-size: 14px;
+  }
+  @include respond(tab-land) {
+    font-size: 15px;
   }
 }
 
@@ -61,5 +94,17 @@
   font-size: 16px;
   &:not(:last-child) {
     margin-bottom: 30px;
+  }
+  @include respond(tab-port) {
+    font-size: 12px;
+    &:not(:last-child) {
+      margin-bottom: 13px;
+    }
+  }
+  @include respond(tab-land) {
+    font-size: 14px;
+    &:not(:last-child) {
+      margin-bottom: 20px;
+    }
   }
 }

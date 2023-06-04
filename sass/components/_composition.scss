@@ -1,5 +1,6 @@
 .composition {
   position: relative;
+  margin-bottom: 110px;
   &__photo {
     width: 50%;
     box-shadow: 0 10px 20px rgba($color-black, 0.4);
@@ -7,32 +8,46 @@
     position: absolute;
     z-index: 10;
     transition: all 0.3s;
-    @include respond(tab-port) {
-      width: 50%;
+    @include respond(phone) {
       margin: 0 auto;
+    }
+    @include respond(tab-port) {
+      width: 60%;
     }
     &--p1 {
       left: 0;
       top: 0;
-      @include respond(tab-port) {
+      @include respond(phone) {
         left: 3px;
         top: 25px;
+      }
+      @include respond(tab-port) {
+        left: 20px;
+        top: -5px;
       }
     }
     &--p2 {
       right: 65px;
       top: 25px;
-      @include respond(tab-port) {
+      @include respond(phone) {
         right: -3px;
         top: 25px;
+      }
+      @include respond(tab-port) {
+        left: 110px;
+        top: 53px;
       }
     }
     &--p3 {
       left: 20%;
       top: 110px;
-      @include respond(tab-port) {
-        left: 67px;
+      @include respond(phone) {
+        left: 25%;
         top: 7px;
+      }
+      @include respond(tab-port) {
+        left: 49px;
+        bottom: 0;
       }
     }
     &:hover {

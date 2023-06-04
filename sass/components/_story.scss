@@ -50,7 +50,7 @@
   }
 }
 
-@include respond(tab-port) {
+@include respond(phone) {
   .story {
     width: 85%;
     font-size: 12px;

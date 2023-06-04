@@ -2,9 +2,16 @@
   background-color: $color-gray-dark;
   padding: 20px 100px;
   font-size: 14px;
-  @include respond(tab-port) {
+  @include respond(phone) {
     padding: 20px 35px;
     font-size: 11px;
+  }
+  @include respond(tab-port) {
+    padding: 0 35px;
+    font-size: 12px;
+  }
+  @include respond(tab-land) {
+    padding: 20px 50px;
   }
   &__logo {
     width: 120px;
@@ -14,9 +21,17 @@
     border-top: 1px solid $color-grey-light-1;
     display: inline-block;
     padding-top: 10px;
-    @include respond(tab-port) {
+    width: 80%;
+    float: left;
+    @include respond(phone) {
       padding-bottom: 15px;
       width: 100%;
+    }
+    @include respond(tab-port) {
+      width: 95%;
+    }
+    @include respond(tab-land) {
+      width: 95%;
     }
   }
   &__list {
@@ -48,12 +63,21 @@
     border-top: 1px solid $color-grey-light-1;
     display: inline-block;
     padding-top: 10px;
-    width: 85%;
-    float: right;
-    @include respond(tab-port) {
+    width: 80%;
+    float: left;
+    @include respond(phone) {
       font-size: 12px;
       width: 100%;
       text-align: justify;
+    }
+    @include respond(tab-port) {
+      float: none;
+      width: 92%;
+      padding-right: 15px;
+    }
+    @include respond(tab-land) {
+      float: left;
+      padding-right: 12px;
     }
   }
 }

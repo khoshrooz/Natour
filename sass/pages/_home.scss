@@ -1,8 +1,15 @@
 .section-about {
   padding: 25px 0;
   margin-top: 8vh;
-  @include respond(tab-port) {
+  @include respond(phone) {
     margin-top: 2px;
+  }
+  @include respond(tab-port) {
+    padding: 15px 0;
+    margin-top: 0px;
+  }
+  @include respond(tab-land) {
+    padding: 0 10px;
   }
 }
 
@@ -22,25 +29,48 @@
   & > * {
     transform: skewY(4deg);
   }
-  @include respond(tab-port) {
+  @include respond(phone) {
     height: auto;
     padding: 30px;
+    margin-top: 80px;
+  }
+  @include respond(tab-port) {
+    height: auto;
+    padding: 50px;
+    margin-top: 20px;
+  }
+  @include respond(tab-land) {
+    height: 70vh;
+    margin-top: 110px;
   }
 }
 
 .section-tours {
   width: 95%;
   margin: 80px auto;
-  @include respond(tab-port) {
+  @include respond(phone) {
     margin: 20px auto;
+  }
+  @include respond(tab-port) {
+    margin: 40px auto;
+  }
+  @include respond(tab-land) {
+    width: 90%;
+    margin: 30px auto;
   }
 }
 
 .section-stories {
   padding: 100px 20px;
   position: relative;
-  @include respond(tab-port) {
+  @include respond(phone) {
     padding: 20px 5px;
+  }
+  @include respond(tab-port) {
+    padding: 37px 10px;
+  }
+  @include respond(tab-land) {
+    padding: 40px 13px;
   }
 }
 
@@ -56,8 +86,8 @@
 .book {
   background-image: linear-gradient(
       105deg,
-      rgba($color-white, 0.8) 50%,
-      transparent 50%
+      rgba($color-white, 0.8) 55%,
+      transparent 55%
     ),
     url(./../../img/nat-10.jpg);
   background-size: cover;
@@ -70,7 +100,7 @@
   }
 }
 
-@include respond(tab-port) {
+@include respond(phone) {
   .section-booking {
     padding: 35px;
   }
@@ -90,6 +120,45 @@
       width: 100%;
       padding: 30px;
       text-align: center;
+    }
+  }
+}
+
+@include respond(tab-port) {
+  .section-booking {
+    padding: 45px 80px;
+  }
+  .book {
+    background-image: linear-gradient(
+        105deg,
+        rgba($color-white, 0.8) 65%,
+        transparent 65%
+      ),
+      url(./../../img/nat-10.jpg);
+    background-size: cover;
+    height: auto;
+    &__form {
+      padding: 20px;
+      width: 90%;
+    }
+  }
+}
+
+@include respond(tab-land) {
+  .section-booking {
+    padding: 90px 140px;
+  }
+  .book {
+    background-image: linear-gradient(
+        105deg,
+        rgba($color-white, 0.8) 60%,
+        transparent 60%
+      ),
+      url(./../../img/nat-10.jpg);
+    height: 350px;
+    &__form {
+      padding: 24px;
+      width: 70%;
     }
   }
 }
