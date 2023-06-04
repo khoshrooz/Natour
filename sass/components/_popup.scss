@@ -21,18 +21,35 @@
     opacity: 0;
     transform: translate(-50%, -50%) scale(0);
     transition: all 0.6s 0.5s;
+    @include respond(phone) {
+      display: grid;
+      grid-template-rows: 1fr 1fr;
+    }
     @include respond(tab-port) {
       display: grid;
       grid-template-rows: 1fr 1fr;
+    }
+    @include respond(tab-land) {
+      display: grid;
+      grid-template-columns: 0.75fr 1.25fr;
+      height: auto;
     }
   }
   &__left {
     width: 33.333333%;
     display: table-cell;
+    @include respond(phone) {
+      display: flex;
+      flex-direction: row;
+      width: 50%;
+    }
     @include respond(tab-port) {
       display: flex;
       flex-direction: row;
       width: 50%;
+    }
+    @include respond(tab-land) {
+      width: 100%;
     }
   }
   &__right {
@@ -40,6 +57,17 @@
     display: table-cell;
     vertical-align: middle;
     padding: 0 30px;
+    @include respond(phone) {
+      width: 100%;
+      padding: 15px 15px;
+      text-align: center;
+      &-link {
+        margin-top: 15px;
+      }
+      div {
+        font-size: 12px;
+      }
+    }
     @include respond(tab-port) {
       width: 100%;
       padding: 15px 15px;
@@ -51,6 +79,11 @@
         font-size: 14px;
       }
     }
+    @include respond(tab-land) {
+      font-size: 14px;
+      width: 100%;
+      padding: 15px;
+    }
   }
   &__text {
     font-size: 14px;
@@ -58,14 +91,24 @@
     column-gap: 30px;
     column-rule: solid 1px $color-gray-dark-2;
     hyphens: auto;
+    @include respond(phone) {
+      font-size: 10px;
+      column-count: 1;
+      margin-bottom: 5px;
+    }
     @include respond(tab-port) {
       font-size: 10px;
       column-count: 1;
       margin-bottom: 5px;
     }
+    @include respond(tab-land) {
+      font-size: 13px;
+      margin-bottom: 6px;
+    }
   }
   &__img {
     display: block;
+    height: auto;
     width: 100%;
   }
   &:target {

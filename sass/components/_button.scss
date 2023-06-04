@@ -10,11 +10,15 @@
   position: relative;
   @include respond(phone) {
     font-size: 10px;
-    padding: 12px 20px;
+    padding: 11px 20px;
   }
   @include respond(tab-port) {
     font-size: 12px;
     padding: 11px 18px;
+  }
+  @include respond(tab-land) {
+    font-size: 13px;
+    padding: 13px 25px;
   }
   &-animated {
     animation: moveInBottom 0.4s ease-in 0.5s;

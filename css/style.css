@@ -231,11 +231,15 @@ body {
   @media (max-width: 600px) {
     .btn {
       font-size: 10px;
-      padding: 12px 20px; } }
+      padding: 11px 20px; } }
   @media (min-width: 601px) and (max-width: 900px) {
     .btn {
       font-size: 12px;
       padding: 11px 18px; } }
+  @media (min-width: 901px) and (max-width: 1200px) {
+    .btn {
+      font-size: 13px;
+      padding: 13px 25px; } }
   .btn-animated {
     animation: moveInBottom 0.4s ease-in 0.5s; }
   .btn:hover {
@@ -304,23 +308,49 @@ body {
     opacity: 0;
     transform: translate(-50%, -50%) scale(0);
     transition: all 0.6s 0.5s; }
+    @media (max-width: 600px) {
+      .popup__content {
+        display: grid;
+        grid-template-rows: 1fr 1fr; } }
     @media (min-width: 601px) and (max-width: 900px) {
       .popup__content {
         display: grid;
         grid-template-rows: 1fr 1fr; } }
+    @media (min-width: 901px) and (max-width: 1200px) {
+      .popup__content {
+        display: grid;
+        grid-template-columns: 0.75fr 1.25fr;
+        height: auto; } }
   .popup__left {
     width: 33.333333%;
     display: table-cell; }
+    @media (max-width: 600px) {
+      .popup__left {
+        display: flex;
+        flex-direction: row;
+        width: 50%; } }
     @media (min-width: 601px) and (max-width: 900px) {
       .popup__left {
         display: flex;
         flex-direction: row;
         width: 50%; } }
+    @media (min-width: 901px) and (max-width: 1200px) {
+      .popup__left {
+        width: 100%; } }
   .popup__right {
     width: 66.6666667%;
     display: table-cell;
     vertical-align: middle;
     padding: 0 30px; }
+    @media (max-width: 600px) {
+      .popup__right {
+        width: 100%;
+        padding: 15px 15px;
+        text-align: center; }
+        .popup__right-link {
+          margin-top: 15px; }
+        .popup__right div {
+          font-size: 12px; } }
     @media (min-width: 601px) and (max-width: 900px) {
       .popup__right {
         width: 100%;
@@ -330,19 +360,34 @@ body {
           margin-top: 15px; }
         .popup__right div {
           font-size: 14px; } }
+    @media (min-width: 901px) and (max-width: 1200px) {
+      .popup__right {
+        font-size: 14px;
+        width: 100%;
+        padding: 15px; } }
   .popup__text {
     font-size: 14px;
     column-count: 2;
     column-gap: 30px;
     column-rule: solid 1px #999;
     hyphens: auto; }
+    @media (max-width: 600px) {
+      .popup__text {
+        font-size: 10px;
+        column-count: 1;
+        margin-bottom: 5px; } }
     @media (min-width: 601px) and (max-width: 900px) {
       .popup__text {
         font-size: 10px;
         column-count: 1;
         margin-bottom: 5px; } }
+    @media (min-width: 901px) and (max-width: 1200px) {
+      .popup__text {
+        font-size: 13px;
+        margin-bottom: 6px; } }
   .popup__img {
     display: block;
+    height: auto;
     width: 100%; }
   .popup:target {
     opacity: 1;
